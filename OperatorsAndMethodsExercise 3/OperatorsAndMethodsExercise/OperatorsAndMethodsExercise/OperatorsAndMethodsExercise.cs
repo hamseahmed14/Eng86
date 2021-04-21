@@ -7,9 +7,7 @@ namespace OperatorAndMethodsExercisesLib
         // implement this method so that it returns true if x is greater than or equal to y
         public static bool GreaterEqual(int x, int y)
         {
-            var result =  x >= y ? true :  false;
-
-            return result;
+            return x>=y;
         }
 
         // implement this method so that it returns the number of dozens of eggs
@@ -21,10 +19,12 @@ namespace OperatorAndMethodsExercisesLib
         // Implement this method so that it take a double as an input,
         // squares it, adds 101, divides the result by 7, then subtracts 4.  
         // Return a double rounded to 3 decimal places.
-        public static double BODMAS(double inputNumber)
+        public static double BODMAS(int inputNumber)
         {
-            var result = (inputNumber * inputNumber + 101) / 7 - 4;
-            return  Math.Round(result,3);
+            //double result = ((double)inputNumber * inputNumber + 101) / 7 - 4;
+            //return  Math.Round(result,3);
+
+            return Math.Round(((inputNumber * inputNumber + 101) / 7.0 - 4),3);
         }
 
         // implement this method so that it returns the sum of x and y

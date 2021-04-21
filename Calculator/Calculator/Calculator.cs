@@ -22,11 +22,13 @@ namespace CalculatorLib
 
         public static int Divide(int a, int b)
         {
-            if(a==0 || b == 0)
+            try
             {
-                return 0;
+                return a / b;
             }
-            return a / b;
+            catch (DivideByZeroException) {
+                return 0;
+                    }
         }
 
         public static int Modulus(int a, int b)
