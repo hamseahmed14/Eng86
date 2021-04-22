@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace IterationLib
 {
@@ -7,17 +8,19 @@ namespace IterationLib
         public static int HighestWhileLoop(int[] nums)
         {
             // this method should use a while loop
-            var result = 0;
-            var i = 0;
-            while (i < nums.Length)
-            {
-                if (result < nums[i])
-                {
-                    result = nums[i];
-                }
-                i++;
-            }
-            return result;
+            //var result = 0;
+            //var i = 0;
+            //while (i < nums.Length)
+            //{
+            //    if (result < nums[i])
+            //    {
+            //        result = nums[i];
+            //    }
+            //    i++;
+            //}
+            //return result;
+
+            return nums.Max();
         }
 
         public static int HighestForLoop(int[] nums)

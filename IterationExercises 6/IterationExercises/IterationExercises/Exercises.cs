@@ -53,6 +53,7 @@ namespace IterationLib
             var b = 0;
             var c = 0;
             var d = 0;
+
             for (int i = 0; i < input.Length; i++)
             {
                 switch (input[i])
