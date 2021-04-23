@@ -11,12 +11,9 @@ namespace CollectionsExercisesLib
         public static List<int> MakeFiveList(int max)
         {
             var result = new List<int>();
-            for (int i = 1; i <= max; i++)
+            for (int i = 5; i <= max; i+=5)
             {
-                if(i%5==0)
-                {
-                    result.Add(i);
-                }
+                   result.Add(i);
             }
             return result;
         }
@@ -32,9 +29,7 @@ namespace CollectionsExercisesLib
             foreach (var item in argList)
             {
                 sum = sum + item;
-            }
-            
-            
+            }     
             return sum/argList.Count;
         }
 

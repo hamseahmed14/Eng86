@@ -14,8 +14,9 @@ namespace DataTypesPt2Lib
             {
                 throw  new ArgumentException("Error - birthDate is in the future");
             }
-            var day = date - birthDate;
-            var age = day.Days/365.25;
+          
+            var age = (date - birthDate).Days / 365.25;
+
             return (int)age;
         }
 
@@ -34,18 +35,17 @@ namespace DataTypesPt2Lib
             {
                 case Suit.HEARTS:
                     return "You've broken my heart";
-                    break;
+                    
                 case Suit.CLUBS:
                     return "And the seventh rule is if this is your first night at fight club, you have to fight.";
-                    break;
+                    
                 case Suit.DIAMONDS:
                     return "Diamonds are a girls best friend";
-                    break;
+                    
                 case Suit.SPADES:
                     return "Bucket and spade";
-                    break;
-                default:
-                    break;
+                   
+                
             }
             return string.Empty;
         }

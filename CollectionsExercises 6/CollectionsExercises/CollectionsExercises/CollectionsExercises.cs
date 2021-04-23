@@ -35,6 +35,7 @@ namespace CollectionsExercisesLib
         public static int[] Reverse(int[] original)
         {
             var reverse = new Stack<int>();
+
             foreach (var item in original)
             {
                 reverse.Push(item);
@@ -65,8 +66,9 @@ namespace CollectionsExercisesLib
             }
 
             foreach (var item in dic)
-            {  
-                   result += $"[{item.Key}, {item.Value}]";
+            {
+                // result += $"[{item.Key}, {item.Value}]";
+                result = dic;
             }
 
             return result;
