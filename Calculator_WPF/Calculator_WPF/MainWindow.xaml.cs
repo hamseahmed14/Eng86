@@ -23,8 +23,16 @@ namespace Calculator_WPF
     {
         string equation = "";
         char mathSymbol= ' ';
-        int _num1 = 0;
-        int _num2 = 0;
+        double _num1 = 0;
+        double _num2 = 0;
+        int d = 0;
+        List<string> eq;
+        int _multiplyCount = 0;
+        int _divisionCount = 0;
+        int _addCount = 0;
+        int _subtractCount = 0;
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -90,11 +98,18 @@ namespace Calculator_WPF
             LabelResult.Content = equation;
         }
 
+        private void Pick_Decimal(object sender, RoutedEventArgs e)
+        {
+            equation += ".";
+            LabelResult.Content = equation;
+        }
+
         private void Pick_Divide(object sender, RoutedEventArgs e)
         {
+      
             if (equation != "")
             {
-                int.TryParse(equation, out _num1);
+                double.TryParse(equation, out _num1);
                 mathSymbol = '/';
                 Value1.Content = equation + " /";
                 equation = "";
@@ -104,9 +119,10 @@ namespace Calculator_WPF
 
         private void Pick_Multiply(object sender, RoutedEventArgs e)
         {
+          
             if (equation != "")
             {
-                int.TryParse(equation, out _num1);
+                double.TryParse(equation, out _num1);
                 mathSymbol = '*';
                 Value1.Content = equation + " *";
                 equation = "";
@@ -116,9 +132,10 @@ namespace Calculator_WPF
 
         private void Pick_Subtract(object sender, RoutedEventArgs e)
         {
+           
             if (equation != "")
             {
-                int.TryParse(equation, out _num1);
+                double.TryParse(equation, out _num1);
                 mathSymbol = '-';
                 Value1.Content = equation + " -";
                 equation = "";
@@ -128,9 +145,10 @@ namespace Calculator_WPF
 
         private void Pick_Add(object sender, RoutedEventArgs e)
         {
+           
             if (equation != "")
             {
-                int.TryParse(equation, out _num1);
+                double.TryParse(equation, out _num1);
                 mathSymbol = '+';
                 Value1.Content = equation + " +";
                 equation = "";
@@ -140,7 +158,8 @@ namespace Calculator_WPF
 
         private void Pick_Result(object sender, RoutedEventArgs e)
         {
-            var numBool = int.TryParse(equation, out _num2);
+           
+            var numBool = double.TryParse(equation, out _num2);
             switch (mathSymbol)
             { 
                 case '/':
@@ -149,28 +168,33 @@ namespace Calculator_WPF
                         LabelResult.Content ="Error";
                         Value1.Content = "";
                         _num1 = 0;
-                        _num2 = 0;
+                        _num2 = 0;  
                         break;
                     }
+                
                     Value1.Content = "";
-                    LabelResult.Content =  numBool == false ? "Invalid input" : Calculator.Divide(_num1, _num2);
+                    equation =  numBool == false ? "Invalid input" : Calculator.Divide(_num1, _num2).ToString();
                     break;
                 case '*':
                     Value1.Content = "";
-                    LabelResult.Content = numBool == false ? "Invalid input" : Calculator.Multiply(_num1, _num2);
+                    equation = numBool == false ? "Invalid input" : Calculator.Multiply(_num1, _num2).ToString();
                     break;
                 case '+':
                     Value1.Content = "";
-                    LabelResult.Content = numBool == false ? "Invalid input" : Calculator.Add(_num1, _num2);
+                    equation = numBool == false ? "Invalid input" : Calculator.Add(_num1, _num2).ToString();
                     break;
                 case '-':
                     Value1.Content = "";
-                    LabelResult.Content = numBool == false ? "Invalid input" : Calculator.Subtract(_num1, _num2);
+                    equation = numBool == false ? "Invalid input" : Calculator.Subtract(_num1, _num2).ToString();
                     break;
                 default:
                     break;
             }
 
+            LabelResult.Content = equation;
+            int.TryParse(equation, out int result);
+            _num1 = result;
+            _num2 = 0;
         }
 
         private void Clear_Label(object sender, RoutedEventArgs e)
@@ -182,5 +206,51 @@ namespace Calculator_WPF
             Value1.Content = "";
             LabelResult.Content = "";
         }
+
+        private int EquestionResult(List<string> input)
+        {
+            List<string> newList = new List<string>();
+            if (_multiplyCount != 0)
+            {
+                newList = ReturnCalc("*", _multiplyCount, input);
+            }
+
+            if (_divisionCount != 0)
+            {
+                newList = ReturnCalc("/", _multiplyCount, input);
+            }
+
+            if (_addCount != 0)
+            {
+                newList = ReturnCalc("+", _multiplyCount, input);
+            }
+
+            if (_subtractCount != 0)
+            {
+                newList = ReturnCalc("-", _multiplyCount, input);
+            }
+            string numString = newList[0];
+            bool resultBool = int.TryParse(numString,out int result);
+
+            return result;
+        }
+
+
+        private List<string> ReturnCalc(string op, int count, List<string> list)
+        {
+            var output = list;
+            for (int i = 0; i < count; i++)
+            {
+                int s = list.IndexOf(op);
+                int q = int.Parse(list[s - 1]) * int.Parse(list[s + 1]);
+                list[s - 1] = q.ToString();
+                list.RemoveAt(s);
+                list.RemoveAt(s + 1);
+            }
+
+            return output;
+        }
+
+       
     }
 }

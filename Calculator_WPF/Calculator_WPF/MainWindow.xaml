@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Calculator" Height="450" Width="360" 
         BorderThickness="10"
-        BorderBrush="BlanchedAlmond"
+        BorderBrush="Black"
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
@@ -42,6 +42,9 @@
         <Button x:Name="SubtractButton" Content="-" FontSize="24" FontWeight="Bold" Grid.Row="4" Grid.Column="4" Click="Pick_Subtract"/>
         <Button x:Name="AddButton" Content="+" FontSize="24" FontWeight="Bold" Grid.Row="5" Grid.Column="3" Click="Pick_Add"/>
         <Button x:Name= "ResultButton"  Content="=" FontSize="24" FontWeight="Bold" Grid.Row="6" Grid.Column="3" Click="Pick_Result"/>
+        <Button x:Name= "DecimalButton"  Content="." FontSize="24" FontWeight="Bold" Grid.Row="6" Grid.Column="2" Click="Pick_Decimal"/>
         <Button x:Name= "ClearButton"  Content="c"  Foreground="Red" FontSize="30" FontWeight="Bold" Grid.Row="2" Grid.Column="0" Click="Clear_Label"/>
+        <Button  Grid.Column="1"  Grid.Row="2" Grid.ColumnSpan="2" />
+        <Button  Grid.Column="0"  Grid.Row="6"  />
     </Grid>
 </Window>
