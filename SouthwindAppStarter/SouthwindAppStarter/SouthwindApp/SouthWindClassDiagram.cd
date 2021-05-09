@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SouthwindApp.Customer">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAMMQAgAAAAAAIAABACAAAAAAAAAAA=</HashCode>
+      <FileName>Customisation\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SouthwindApp.Order">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAEAAAAAAAAAAAAAABAAAAAAAAAEABBAAAAAAAAAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SouthwindApp.OrderDetail">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgQAAAAA=</HashCode>
+      <FileName>OrderDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SouthwindApp.Product">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAEABAAgAAAAAAAAAAAAAAAgAAIAAA=</HashCode>
+      <FileName>Customisation\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

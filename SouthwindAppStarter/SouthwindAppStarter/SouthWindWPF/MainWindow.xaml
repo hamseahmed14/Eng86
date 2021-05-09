@@ -1,0 +1,33 @@
+﻿<Window x:Class="SouthWindWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SouthWindWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="/backgroud.jpg"/>
+        </Grid.Background>
+        <TextBox x:Name="Username"  TextWrapping="Wrap" VerticalAlignment="Top" Width="278" Margin="261,93,261,0" Grid.Column="1"/>
+        <PasswordBox x:Name="Password"   VerticalAlignment="Top" Width="278" Margin="261,160,261,0" />
+        <Button  x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="360,273,0,0" VerticalAlignment="Top" Click="Submit_Click"/>
+        <Button x:Name="SignUp" Content="Sign Up" HorizontalAlignment="Left" Margin="342,350,0,0" VerticalAlignment="Top" FontSize="20" Background="Transparent" FontWeight="Bold" Foreground="White" Click="SignUp_Click"/>
+        <Label Content="Log In" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold" Foreground="Wheat"/>-->
+        <StackPanel   Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Right" Panel.ZIndex="1">
+            <Button Content="Log in" MinWidth="100" Click="BtnClickLogin"/>
+            <Button Content="Register" MinWidth="100" Click="BtnClickRegister"/>
+        </StackPanel>
+        <Frame NavigationUIVisibility="Hidden" x:Name="Main" Margin="0,0,0,0" Panel.ZIndex="0">
+            
+        </Frame>
+
+
+
+
+
+
+    </Grid>
+</Window>
